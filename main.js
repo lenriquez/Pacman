@@ -82,15 +82,16 @@ PACMAN.UI.Ghost = function(){
     return that;
 };
 
-PACMAN.UI.Pacman = function(){
+PACMAN.UI.Pacman = function(ctx_init){
     var that = {};
-    var ctx;
+    var ctx = ctx_init;
+
     /**
      *  A Map.
      *  @constructor
      */
     var constructor = function (){
-        initialize_canvas();        
+        //initialize_canvas();        
         that.draw(ctx);   
     };
 
@@ -243,11 +244,11 @@ PACMAN.UI.Map = function(spec) {
 		initialize_canvas();
         draw_map();
         draw_pills();
-        //pacman = PACMAN.UI.Pacman();
-        //pinky  = PACMAN.UI.Ghost();
-        //cyde   = PACMAN.UI.Ghost();
-        //red    = PACMAN.UI.Ghost();
-        //orange = PACMAN.UI.Ghost();
+        pacman = PACMAN.UI.Pacman(ctx);
+        pinky  = PACMAN.UI.Ghost();
+        cyde   = PACMAN.UI.Ghost();
+        red    = PACMAN.UI.Ghost();
+        orange = PACMAN.UI.Ghost();
 	};
 
 	var initialize_canvas = function() {
