@@ -1,0 +1,30 @@
+{
+  "name": "pacman",
+  "version": "0.0.1",
+  "description": "Making a Pacman Game for Fun!",
+  "main": "main.js",
+  "dependencies": {
+    "karma": "^0.12.16",
+    "karma-jasmine": "^0.1.5",
+    "karma-chrome-launcher": "^0.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/felipe0961/Pacman.git"
+  },
+  "keywords": [
+    "JS",
+    "Game",
+    "HTML5"
+  ],
+  "author": "Luis Felipe Enriquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/felipe0961/Pacman/issues"
+  },
+  "homepage": "https://github.com/felipe0961/Pacman"
+}
