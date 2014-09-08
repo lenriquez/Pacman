@@ -3,5 +3,5 @@
  */
  
 window.onload = function () {
-	PACMAN.UI.Map();
+	PACMAN.UI.Game();
 };

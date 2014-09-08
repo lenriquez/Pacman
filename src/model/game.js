@@ -17,8 +17,10 @@ PACMAN.Model.Game = function(spec) {
 		//game 
 	};
 
-    that.move_pacman = function (direction) {
-        map_value = -1
+    that.move_pacman = function (direction,x, y) {
+        map_value = -1; 
+        pacman[0] = y;
+        pacman[1] = x;
         console.log(pacman[0]);
         console.log(pacman[1]);
         switch(direction){
@@ -31,7 +33,7 @@ PACMAN.Model.Game = function(spec) {
                 map_value = map.getValue(pacman[0]+1 , pacman[1]);
                 break;
             case PACMAN.KEY_LEFT_CODE:
-                console.log("left")
+                //console.log("left")
                 map_value = map.getValue(pacman[0] , pacman[1]-1);
                 break;
             case PACMAN.KEY_RIGHT_CODE:
