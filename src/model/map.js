@@ -52,7 +52,10 @@ PACMAN.Model.Map = function() {
      *  param y:  Column value (Integer)
      */
 	that.getValue = function (x ,y){
-		value = map[x][y];
+        if ( x ==NaN)
+        console.log("X="+x+" Y="+ y);
+
+        value = map[x][y];
 		// map[x][y] = 2; 
 		return value;
 	}

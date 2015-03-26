@@ -4,6 +4,5 @@ PACMAN.UI.Blinky = function(ctx, spec){
     spec.top  = 8 * PACMAN.SIZE;
     spec.left = 9 * PACMAN.SIZE;
     spec.color = PACMAN.RED;
-    that = PACMAN.UI.Ghost(ctx,spec);
-    
+    that = PACMAN.UI.Ghost(ctx,spec);    
 };

@@ -37,16 +37,18 @@ PACMAN.UI.Pacman = function(ctx) {
     that.calculate_mouth_angle();
   };
 
-  that.change_direction = function(dir) {
+  that.changeDirection = function(dir) {
     increase_mouth_angle = 0;
     switch (dir) {
       case PACMAN.KEY_UP_CODE:
+        direction = PACMAN.KEY_UP_CODE
         bottom_lip = 1.399;
         top_lip = 1.55;
         break;
       case PACMAN.KEY_UP_CODE:
         break;
       case PACMAN.KEY_LEFT_CODE:
+        direction = PACMAN.KEY_LEFT_CODE
         bottom_lip = 0.999;
         top_lip = 1.0;
         break;
@@ -71,6 +73,7 @@ PACMAN.UI.Pacman = function(ctx) {
   that.movements = function() {
     switch (direction) {
       case PACMAN.KEY_UP_CODE:
+        y -= 1;
         break;
       case PACMAN.KEY_DOWN_CODE:
         break;

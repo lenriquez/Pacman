@@ -17,7 +17,7 @@ PACMAN.UI.Game = function(spec) {
   	spec.inky = PACMAN.UI.Inky(spec.ctx, {});
   	
   	// Set action listener to functions
-  	start_pacman();  
+  	startPacman();  
   	set_keyboard_controls();
   	
 	};
@@ -35,8 +35,13 @@ PACMAN.UI.Game = function(spec) {
   // Public function  
   var set_keyboard_controls = function() {
     document.body.onkeydown = function(event) {
-      var key_event = game.move_pacman(event.keyCode) == 0 ? 0 : event.keyCode; 
-      pacman.change_direction(event.keyCode);
+      var x = (spec.pacman.get_x() / PACMAN.SIZE); // - (PACMAN.SIZE / 2);
+      var y = (spec.pacman.get_y() / PACMAN.SIZE); // - (PACMAN.SIZE / 2);
+
+      var newDirection = spec.game.existPath( event.keyCode, x, y);
+      if ( newDirection ){ 
+        spec.pacman.changeDirection(event.keyCode);
+      }
     }
   };
 
@@ -52,13 +57,13 @@ PACMAN.UI.Game = function(spec) {
     }
   };
 
-  var start_pacman = function(){
+  var startPacman = function(){
   	spec.pacman = PACMAN.UI.Pacman(spec.ctx, {});
   	setInterval(function () { 
-  		if ( spec.game.move_pacman(
+  		if ( spec.game.existPath(
   			spec.pacman.get_direction(),
   			spec.pacman.get_x() / PACMAN.SIZE ,
-  			spec.pacman.get_y() / PACMAN.SIZE ) != 0){
+  			spec.pacman.get_y() / PACMAN.SIZE )){
   			
   			spec.pacman.animation();
   		}
